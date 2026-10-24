@@ -372,7 +372,8 @@ body.theme-dark .window-box,
 body.theme-dark .project-card,
 body.theme-dark .about-card,
 body.theme-dark .skill-card,
-body.theme-dark .process-step {
+body.theme-dark .process-step,
+body.theme-dark .certificate-card {
   background: rgba(42, 36, 31, 0.94);
 }
 
@@ -528,6 +529,32 @@ body.theme-dark .window-body {
 
 .about-card li span {
   color: var(--muted);
+}
+
+.certificate-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.certificate-card {
+  padding: 24px;
+  background: var(--panel);
+  border-radius: 22px;
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+}
+
+.certificate-tag {
+  display: inline-flex;
+  margin-bottom: 14px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: var(--panel-soft);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .project-grid {
@@ -759,6 +786,7 @@ body.page-ready .intro-screen {
 @media (max-width: 920px) {
   .hero-grid,
   .about-grid,
+  .certificate-grid,
   .project-grid,
   .process-grid,
   .skills-grid {
