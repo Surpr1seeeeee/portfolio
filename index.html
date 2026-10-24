@@ -30,11 +30,16 @@
           </a>
 
           <div class="header-actions">
+            <div class="lang-switch" aria-label="Language switcher">
+              <button class="lang-btn active" type="button" data-lang="ru">RU</button>
+              <button class="lang-btn" type="button" data-lang="en">EN</button>
+            </div>
+
             <button class="theme-toggle" type="button" aria-label="Toggle day and night mode" aria-pressed="false">
               <span class="toggle-track">
                 <span class="toggle-knob"></span>
               </span>
-              <span class="toggle-label">Night</span>
+              <span class="toggle-label" data-i18n="theme-night">Night</span>
             </button>
 
             <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
@@ -45,11 +50,11 @@
           </div>
 
           <nav class="main-nav" aria-label="Main navigation">
-            <a href="#about">About</a>
-            <a href="#education">Education</a>
-            <a href="#projects">Projects</a>
-            <a href="#skills">Skills</a>
-            <a href="#contact">Contact</a>
+            <a href="#about" data-i18n="nav-about">About</a>
+            <a href="#education" data-i18n="nav-education">Education</a>
+            <a href="#projects" data-i18n="nav-projects">Projects</a>
+            <a href="#skills" data-i18n="nav-skills">Skills</a>
+            <a href="#contact" data-i18n="nav-contact">Contact</a>
           </nav>
         </div>
       </header>
@@ -58,26 +63,26 @@
         <section class="hero">
           <div class="container hero-grid">
             <div class="hero-copy reveal">
-              <p class="eyebrow">Frontend Developer • Designer</p>
+              <p class="eyebrow" data-i18n="hero-eyebrow">Frontend Developer • Designer</p>
               <h1>
-                I build clean, modern websites
-                <span>that feel premium.</span>
+                <span data-i18n="hero-title-line1">I build clean, modern websites</span>
+                <span data-i18n="hero-title-line2">that feel premium.</span>
               </h1>
-              <p class="lead">
+              <p class="lead" data-i18n="hero-lead">
                 I’m Dmitry, a 18+ year old web developer from Kyiv, Ukraine. I create
                 stylish landing pages, interactive websites, and small business projects
                 with a modern, minimal aesthetic.
               </p>
 
               <div class="cta-row">
-                <a class="btn btn-primary" href="#projects">View projects</a>
-                <a class="btn btn-secondary" href="#contact">Contact me</a>
+                <a class="btn btn-primary" href="#projects" data-i18n="btn-projects">View projects</a>
+                <a class="btn btn-secondary" href="#contact" data-i18n="btn-contact">Contact me</a>
               </div>
 
               <ul class="hero-stats" aria-label="Quick profile stats">
-                <li><strong>3–4</strong><span>Years Python</span></li>
-                <li><strong>1</strong><span>Year frontend</span></li>
-                <li><strong>3</strong><span>Projects</span></li>
+                <li><strong>3–4</strong><span data-i18n="stat-python">Years Python</span></li>
+                <li><strong>1</strong><span data-i18n="stat-frontend">Year frontend</span></li>
+                <li><strong>3</strong><span data-i18n="stat-projects">Projects</span></li>
               </ul>
             </div>
 
@@ -88,8 +93,8 @@
                   <div class="avatar">D</div>
                 </div>
                 <div class="mini-info">
-                  <p class="status">Available for freelance</p>
-                  <h2>Web projects</h2>
+                  <p class="status" data-i18n="status-freelance">Available for freelance</p>
+                  <h2 data-i18n="profile-title">Web projects</h2>
                 </div>
                 <div class="window-box">
                   <div class="window-header">
@@ -115,25 +120,25 @@
         <section class="section pad-top" id="about">
           <div class="container">
             <div class="section-heading reveal">
-              <p class="eyebrow">About me</p>
-              <h2>Design meets logic.</h2>
+              <p class="eyebrow" data-i18n="section-about">About me</p>
+              <h2 data-i18n="about-title">Design meets logic.</h2>
             </div>
 
             <div class="about-grid">
               <div class="about-text reveal">
-                <p>
+                <p data-i18n="about-p1">
                   I’ve been creating websites for about a year, starting with my own
                   design ideas and learning how to turn them into real, usable digital
                   experiences. I enjoy building modern interfaces that are simple,
                   attractive and effective.
                 </p>
-                <p>
+                <p data-i18n="about-p2">
                   My style is usually minimal and clean, but I can easily adapt to other
                   visual directions depending on the project. I especially like making
                   landing pages that feel premium and trustworthy, while still staying easy
                   for the user to understand.
                 </p>
-                <p>
+                <p data-i18n="about-p3">
                   I also studied at Logika School, where I developed my foundation in
                   programming and deepened my understanding of logic, structure, and problem solving.
                 </p>
@@ -141,11 +146,11 @@
 
               <div class="about-card reveal">
                 <ul>
-                  <li><span>Location</span><strong>Kyiv, Ukraine</strong></li>
-                  <li><span>Age</span><strong>18+</strong></li>
-                  <li><span>Stack</span><strong>HTML / CSS / JS</strong></li>
-                  <li><span>Languages</span><strong>Ukrainian · Russian · English</strong></li>
-                  <li><span>Learning</span><strong>React</strong></li>
+                  <li><span data-i18n="card-location">Location</span><strong data-i18n="card-location-value">Kyiv, Ukraine</strong></li>
+                  <li><span data-i18n="card-age">Age</span><strong>18+</strong></li>
+                  <li><span data-i18n="card-stack">Stack</span><strong>HTML / CSS / JS</strong></li>
+                  <li><span data-i18n="card-languages">Languages</span><strong data-i18n="card-languages-value">Ukrainian · Russian · English</strong></li>
+                  <li><span data-i18n="card-learning">Learning</span><strong>React</strong></li>
                 </ul>
               </div>
             </div>
@@ -155,33 +160,33 @@
         <section class="section" id="education">
           <div class="container">
             <div class="section-heading reveal">
-              <p class="eyebrow">Education</p>
-              <h2>Experience and certificates.</h2>
+              <p class="eyebrow" data-i18n="section-education">Education</p>
+              <h2 data-i18n="education-title">Experience and certificates.</h2>
             </div>
 
             <div class="certificate-grid">
               <div class="certificate-card reveal">
-                <span class="certificate-tag">School</span>
-                <h3>Logika</h3>
-                <p>
+                <span class="certificate-tag" data-i18n="cert-tag-school">School</span>
+                <h3 data-i18n="cert-logika">Logika</h3>
+                <p data-i18n="cert-logika-text">
                   Studied in a programming-oriented school where I built my basics in logic,
                   problem solving, and structured thinking.
                 </p>
               </div>
 
               <div class="certificate-card reveal">
-                <span class="certificate-tag">Python</span>
-                <h3>3–4 years</h3>
-                <p>
+                <span class="certificate-tag" data-i18n="cert-tag-python">Python</span>
+                <h3 data-i18n="cert-python-years">3–4 years</h3>
+                <p data-i18n="cert-python-text">
                   Worked with Python for several years, developing analytical thinking and
                   understanding of coding logic and algorithms.
                 </p>
               </div>
 
               <div class="certificate-card reveal">
-                <span class="certificate-tag">Frontend</span>
-                <h3>1 year</h3>
-                <p>
+                <span class="certificate-tag" data-i18n="cert-tag-frontend">Frontend</span>
+                <h3 data-i18n="cert-frontend-years">1 year</h3>
+                <p data-i18n="cert-frontend-text">
                   Focused on frontend development for the last year, creating landing pages,
                   interactive elements, and visual interfaces.
                 </p>
@@ -193,78 +198,63 @@
         <section class="section" id="projects">
           <div class="container">
             <div class="section-heading reveal">
-              <p class="eyebrow">Projects</p>
-              <h2>My work.</h2>
+              <p class="eyebrow" data-i18n="section-projects">Projects</p>
+              <h2 data-i18n="projects-title">My work.</h2>
             </div>
 
             <div class="project-grid">
               <article class="project-card reveal">
                 <div class="project-top">
                   <span class="tag tag-dark">HTML</span>
-                  <span class="tag tag-light">Landing page</span>
+                  <span class="tag tag-light" data-i18n="project-type-landing">Landing page</span>
                 </div>
-                <h3>Graduation site</h3>
-                <p>
+                <h3 data-i18n="project-grad-title">Graduation site</h3>
+                <p data-i18n="project-grad-text">
                   A memorable graduation website with a polished layout, modern sections,
                   and a visually strong presentation for an event.
                 </p>
                 <ul>
-                  <li>Event-focused structure</li>
-                  <li>Modern presentation</li>
-                  <li>Responsive design</li>
+                  <li data-i18n="project-grad-li1">Event-focused structure</li>
+                  <li data-i18n="project-grad-li2">Modern presentation</li>
+                  <li data-i18n="project-grad-li3">Responsive design</li>
                 </ul>
-                <a
-                  href="https://github.com/Surpr1seeeeee/last-site-"
-                  target="_blank"
-                  rel="noreferrer"
-                  >View GitHub project</a
-                >
+                <a href="https://github.com/Surpr1seeeeee/last-site-" target="_blank" rel="noreferrer" data-i18n="project-view">View GitHub project</a>
               </article>
 
               <article class="project-card reveal accent-card">
                 <div class="project-top">
                   <span class="tag tag-dark">CSS</span>
-                  <span class="tag tag-light">Commercial site</span>
+                  <span class="tag tag-light" data-i18n="project-type-commercial">Commercial site</span>
                 </div>
                 <h3>Pulse Wave</h3>
-                <p>
+                <p data-i18n="project-pulse-text">
                   A sales-oriented website built to showcase a product and present value in a
                   clean, attractive way.
                 </p>
                 <ul>
-                  <li>Product presentation</li>
-                  <li>Sales-focused design</li>
-                  <li>Visual hierarchy</li>
+                  <li data-i18n="project-pulse-li1">Product presentation</li>
+                  <li data-i18n="project-pulse-li2">Sales-focused design</li>
+                  <li data-i18n="project-pulse-li3">Visual hierarchy</li>
                 </ul>
-                <a
-                  href="https://github.com/Surpr1seeeeee/for-selling-site-Pulse-Wave"
-                  target="_blank"
-                  rel="noreferrer"
-                  >View GitHub project</a
-                >
+                <a href="https://github.com/Surpr1seeeeee/for-selling-site-Pulse-Wave" target="_blank" rel="noreferrer" data-i18n="project-view">View GitHub project</a>
               </article>
 
               <article class="project-card reveal">
                 <div class="project-top">
                   <span class="tag tag-dark">JavaScript</span>
-                  <span class="tag tag-light">Interactive app</span>
+                  <span class="tag tag-light" data-i18n="project-type-interactive">Interactive app</span>
                 </div>
-                <h3>Quiz</h3>
-                <p>
+                <h3 data-i18n="project-quiz-title">Quiz</h3>
+                <p data-i18n="project-quiz-text">
                   An engaging quiz project built with JavaScript, where the experience is driven by
                   interactivity and instant user feedback.
                 </p>
                 <ul>
-                  <li>Dynamic logic</li>
-                  <li>Interactive UI</li>
-                  <li>Fast user feedback</li>
+                  <li data-i18n="project-quiz-li1">Dynamic logic</li>
+                  <li data-i18n="project-quiz-li2">Interactive UI</li>
+                  <li data-i18n="project-quiz-li3">Fast user feedback</li>
                 </ul>
-                <a
-                  href="https://github.com/Surpr1seeeeee/quiz"
-                  target="_blank"
-                  rel="noreferrer"
-                  >View GitHub project</a
-                >
+                <a href="https://github.com/Surpr1seeeeee/quiz" target="_blank" rel="noreferrer" data-i18n="project-view">View GitHub project</a>
               </article>
             </div>
           </div>
@@ -273,16 +263,16 @@
         <section class="section accent-panel" id="skills">
           <div class="container">
             <div class="section-heading reveal">
-              <p class="eyebrow">Skills</p>
-              <h2>What I work with.</h2>
+              <p class="eyebrow" data-i18n="section-skills">Skills</p>
+              <h2 data-i18n="skills-title">What I work with.</h2>
             </div>
 
             <div class="skills-grid">
               <div class="skill-card reveal"><span>HTML</span></div>
               <div class="skill-card reveal"><span>CSS</span></div>
               <div class="skill-card reveal"><span>JavaScript</span></div>
-              <div class="skill-card reveal"><span>Responsive design</span></div>
-              <div class="skill-card reveal"><span>UI design</span></div>
+              <div class="skill-card reveal"><span data-i18n="skill-responsive">Responsive design</span></div>
+              <div class="skill-card reveal"><span data-i18n="skill-ui">UI design</span></div>
               <div class="skill-card reveal"><span>React</span></div>
             </div>
           </div>
@@ -291,25 +281,25 @@
         <section class="section process-section">
           <div class="container">
             <div class="section-heading reveal">
-              <p class="eyebrow">Workflow</p>
-              <h2>Simple and effective.</h2>
+              <p class="eyebrow" data-i18n="section-workflow">Workflow</p>
+              <h2 data-i18n="workflow-title">Simple and effective.</h2>
             </div>
 
             <div class="process-grid">
               <div class="process-step reveal">
                 <span>01</span>
-                <h3>Research</h3>
-                <p>I study the target audience and the business goal before design.</p>
+                <h3 data-i18n="step-research-title">Research</h3>
+                <p data-i18n="step-research-text">I study the target audience and the business goal before design.</p>
               </div>
               <div class="process-step reveal">
                 <span>02</span>
-                <h3>Design</h3>
-                <p>I create a clean structure with a strong visual hierarchy and style.</p>
+                <h3 data-i18n="step-design-title">Design</h3>
+                <p data-i18n="step-design-text">I create a clean structure with a strong visual hierarchy and style.</p>
               </div>
               <div class="process-step reveal">
                 <span>03</span>
-                <h3>Build</h3>
-                <p>I turn the design into a responsive website using HTML, CSS and JS.</p>
+                <h3 data-i18n="step-build-title">Build</h3>
+                <p data-i18n="step-build-text">I turn the design into a responsive website using HTML, CSS and JS.</p>
               </div>
             </div>
           </div>
@@ -319,8 +309,8 @@
       <footer class="site-footer" id="contact">
         <div class="container footer-wrap">
           <div>
-            <p class="eyebrow">Contact</p>
-            <h2>Let’s build something great.</h2>
+            <p class="eyebrow" data-i18n="footer-contact">Contact</p>
+            <h2 data-i18n="footer-heading">Let’s build something great.</h2>
           </div>
 
           <div class="contact-list">
