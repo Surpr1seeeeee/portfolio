@@ -2,6 +2,7 @@ const navToggle = document.querySelector('.nav-toggle');
 const nav = document.querySelector('.main-nav');
 const themeToggle = document.querySelector('.theme-toggle');
 const body = document.body;
+const langButtons = document.querySelectorAll('.lang-btn');
 
 const translations = {
   en: {
@@ -158,10 +159,6 @@ const translations = {
   }
 };
 
-const langButtons = document.querySelectorAll('.lang-btn');
-const savedLang = localStorage.getItem('portfolio-lang') || 'ru';
-let currentLang = savedLang;
-
 function applyTheme(theme) {
   const isDark = theme === 'dark';
   body.classList.toggle('theme-dark', isDark);
@@ -205,8 +202,10 @@ function applyTranslations(lang) {
 }
 
 const savedTheme = localStorage.getItem('portfolio-theme') || 'light';
+let currentLang = localStorage.getItem('portfolio-lang') || 'ru';
+
 applyTheme(savedTheme);
-applyTranslations(savedLang);
+applyTranslations(currentLang);
 
 if (navToggle && nav) {
   navToggle.addEventListener('click', () => {
