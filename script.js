@@ -3,10 +3,11 @@ const nav = document.querySelector('.main-nav');
 const themeToggle = document.querySelector('.theme-toggle');
 const body = document.body;
 const langButtons = document.querySelectorAll('.lang-btn');
-
+ 
 const translations = {
   en: {
     'theme-night': 'Night',
+    'theme-day': 'Day',
     'nav-about': 'About',
     'nav-education': 'Education',
     'nav-projects': 'Projects',
@@ -66,6 +67,11 @@ const translations = {
     'project-quiz-li1': 'Dynamic logic',
     'project-quiz-li2': 'Interactive UI',
     'project-quiz-li3': 'Fast user feedback',
+    'project-type-business': 'Business',
+    'project-olmek-text': 'A business-focused website created for a brand presentation and service showcase, built with a clean structure and strong commercial layout.',
+    'project-olmek-li1': 'Business website',
+    'project-olmek-li2': 'Brand presentation',
+    'project-olmek-li3': 'Commercial structure',
     'section-skills': 'Skills',
     'skills-title': 'What I work with.',
     'skill-responsive': 'Responsive design',
@@ -83,6 +89,7 @@ const translations = {
   },
   ru: {
     'theme-night': 'Ночь',
+    'theme-day': 'День',
     'nav-about': 'Обо мне',
     'nav-education': 'Обучение',
     'nav-projects': 'Проекты',
@@ -142,6 +149,11 @@ const translations = {
     'project-quiz-li1': 'Динамическая логика',
     'project-quiz-li2': 'Интерактивный интерфейс',
     'project-quiz-li3': 'Быстрая обратная связь',
+    'project-type-business': 'Бизнес',
+    'project-olmek-text': 'Бизнес-сайт, созданный для презентации бренда и демонстрации услуг, с чистой структурой и сильной коммерческой подачей.',
+    'project-olmek-li1': 'Бизнес-сайт',
+    'project-olmek-li2': 'Презентация бренда',
+    'project-olmek-li3': 'Коммерческая структура',
     'section-skills': 'Навыки',
     'skills-title': 'С чем я работаю.',
     'skill-responsive': 'Адаптивный дизайн',
@@ -158,23 +170,23 @@ const translations = {
     'footer-heading': 'Давайте создадим что-то крутое.'
   }
 };
-
+ 
 function applyTheme(theme) {
   const isDark = theme === 'dark';
   body.classList.toggle('theme-dark', isDark);
   body.classList.toggle('theme-light', !isDark);
-
+ 
   if (themeToggle) {
     themeToggle.setAttribute('aria-pressed', String(isDark));
     const label = themeToggle.querySelector('.toggle-label');
     if (label) {
-      label.textContent = isDark ? 'Day' : translations[currentLang]['theme-night'];
+      label.textContent = isDark ? translations[currentLang]['theme-day'] : translations[currentLang]['theme-night'];
     }
   }
-
+ 
   localStorage.setItem('portfolio-theme', theme);
 }
-
+ 
 function applyTranslations(lang) {
   currentLang = lang;
   document.documentElement.lang = lang === 'ru' ? 'ru' : 'en';
@@ -185,34 +197,34 @@ function applyTranslations(lang) {
       element.textContent = value;
     }
   });
-
+ 
   langButtons.forEach((button) => {
     button.classList.toggle('active', button.dataset.lang === lang);
   });
-
+ 
   if (themeToggle) {
     const label = themeToggle.querySelector('.toggle-label');
     if (label) {
       const theme = body.classList.contains('theme-dark') ? 'dark' : 'light';
-      label.textContent = theme === 'dark' ? 'Day' : translations[lang]['theme-night'];
+      label.textContent = theme === 'dark' ? translations[lang]['theme-day'] : translations[lang]['theme-night'];
     }
   }
-
+ 
   localStorage.setItem('portfolio-lang', lang);
 }
-
+ 
 const savedTheme = localStorage.getItem('portfolio-theme') || 'light';
 let currentLang = localStorage.getItem('portfolio-lang') || 'ru';
-
+ 
 applyTheme(savedTheme);
 applyTranslations(currentLang);
-
+ 
 if (navToggle && nav) {
   navToggle.addEventListener('click', () => {
     const isOpen = nav.classList.toggle('is-open');
     navToggle.setAttribute('aria-expanded', String(isOpen));
   });
-
+ 
   nav.querySelectorAll('a').forEach((link) => {
     link.addEventListener('click', () => {
       nav.classList.remove('is-open');
@@ -220,21 +232,21 @@ if (navToggle && nav) {
     });
   });
 }
-
+ 
 if (themeToggle) {
   themeToggle.addEventListener('click', () => {
     const nextTheme = body.classList.contains('theme-dark') ? 'light' : 'dark';
     applyTheme(nextTheme);
   });
 }
-
+ 
 langButtons.forEach((button) => {
   button.addEventListener('click', () => {
     const nextLang = button.dataset.lang;
     applyTranslations(nextLang);
   });
 });
-
+ 
 const revealItems = document.querySelectorAll('.reveal');
 const observer = new IntersectionObserver(
   (entries) => {
@@ -249,9 +261,9 @@ const observer = new IntersectionObserver(
     threshold: 0.15,
   }
 );
-
+ 
 revealItems.forEach((item) => observer.observe(item));
-
+ 
 window.addEventListener('load', () => {
   setTimeout(() => {
     document.body.classList.add('page-ready');
